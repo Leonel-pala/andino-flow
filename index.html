@@ -1,333 +1,504 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es-AR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Andino Flow — Automatizamos tu negocio con inteligencia artificial</title>
-<meta name="description" content="Andino Flow automatiza tu negocio con inteligencia artificial: respuestas de WhatsApp, turnos, recordatorios y tareas repetitivas. Con base en Esquel, Chubut.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Andino Flow — Automatizamos tu negocio con inteligencia artificial
+    </title>
+    <meta
+      name="description"
+      content="Andino Flow automatiza tu negocio con inteligencia artificial: respuestas de WhatsApp, turnos, recordatorios y tareas repetitivas. Con base en Esquel, Chubut."
+    />
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Línea de flujo decorativa que recorre toda la página (motivo "río/circuito" del logo) -->
+    <svg
+      class="flow-line"
+      width="6"
+      height="100%"
+      viewBox="0 0 6 100"
+      preserveAspectRatio="none"
+      aria-hidden="true"
+    >
+      <line
+        x1="3"
+        y1="0"
+        x2="3"
+        y2="100"
+        stroke="url(#flowGrad)"
+        stroke-width="2"
+        stroke-dasharray="1 4"
+        stroke-linecap="round"
+      />
+      <defs>
+        <linearGradient id="flowGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#B9A3D9" stop-opacity="0" />
+          <stop offset="15%" stop-color="#B9A3D9" stop-opacity="0.7" />
+          <stop offset="85%" stop-color="#B9A3D9" stop-opacity="0.7" />
+          <stop offset="100%" stop-color="#B9A3D9" stop-opacity="0" />
+        </linearGradient>
+      </defs>
+    </svg>
 
-<!-- Línea de flujo decorativa que recorre toda la página (motivo "río/circuito" del logo) -->
-<svg class="flow-line" width="6" height="100%" viewBox="0 0 6 100" preserveAspectRatio="none" aria-hidden="true">
-  <line x1="3" y1="0" x2="3" y2="100" stroke="url(#flowGrad)" stroke-width="2" stroke-dasharray="1 4" stroke-linecap="round"/>
-  <defs>
-    <linearGradient id="flowGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#B9A3D9" stop-opacity="0"/>
-      <stop offset="15%" stop-color="#B9A3D9" stop-opacity="0.7"/>
-      <stop offset="85%" stop-color="#B9A3D9" stop-opacity="0.7"/>
-      <stop offset="100%" stop-color="#B9A3D9" stop-opacity="0"/>
-    </linearGradient>
-  </defs>
-</svg>
+    <!-- HEADER -->
+    <header class="site-header" id="top">
+      <div class="wrap header-inner">
+        <a href="#top" class="brand" aria-label="Andino Flow, ir al inicio">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-text">ANDINO FLOW</span>
+        </a>
+        <nav class="main-nav" aria-label="Navegación principal">
+          <a href="#que-hacemos">Qué hacemos</a>
+          <a href="#como-funciona">Cómo funciona</a>
+          <a href="#inversion">Planes</a>
+        </nav>
+        <a
+          class="btn btn-primary btn-small"
+          id="navCta"
+          href="https://wa.me/5492945505409?text=Hola%20Leonel!%20Quiero%20saber%20c%C3%B3mo%20puedo%20automatizar%20mi%20negocio"
+          target="_blank"
+          rel="noopener"
+        >
+          <svg class="icon-wsp" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M17.6 6.3A7.9 7.9 0 0 0 12.04 4 7.94 7.94 0 0 0 4.1 12a7.9 7.9 0 0 0 1.06 3.97L4 20l4.14-1.09A7.93 7.93 0 0 0 12.04 20 7.94 7.94 0 0 0 20 12a7.9 7.9 0 0 0-2.4-5.7ZM12.04 18.5a6.4 6.4 0 0 1-3.28-.9l-.24-.14-2.46.64.66-2.4-.15-.25a6.44 6.44 0 0 1-1-3.45 6.5 6.5 0 1 1 6.47 6.5Zm3.56-4.87c-.2-.1-1.15-.57-1.33-.63-.18-.07-.3-.1-.44.1-.13.19-.5.63-.62.76-.11.13-.23.14-.42.05-.2-.1-.83-.31-1.58-.98a5.9 5.9 0 0 1-1.1-1.36c-.11-.2 0-.3.09-.4.09-.1.2-.24.3-.36.1-.12.13-.2.2-.34.06-.13.03-.25-.02-.35-.05-.1-.44-1.06-.6-1.45-.16-.38-.32-.33-.44-.33h-.38c-.13 0-.34.05-.52.24-.18.19-.68.66-.68 1.61 0 .95.7 1.87.8 2 .1.13 1.36 2.09 3.31 2.92.46.2.82.32 1.1.4.46.15.88.13 1.21.08.37-.06 1.15-.47 1.31-.92.16-.46.16-.85.11-.93-.05-.09-.18-.14-.38-.24Z"
+            />
+          </svg>
+          Escribinos
+        </a>
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
 
-<!-- HEADER -->
-<header class="site-header" id="top">
-  <div class="wrap header-inner">
-    <a href="#top" class="brand" aria-label="Andino Flow, ir al inicio">
-      <span class="brand-mark" aria-hidden="true"></span>
-      <span class="brand-text">ANDINO FLOW</span>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-bg-pattern" aria-hidden="true"></div>
+      <div class="wrap hero-inner">
+        <p class="eyebrow">Automatización + Inteligencia Artificial</p>
+        <h1 class="reveal">
+          Automatizamos tu negocio<br />con inteligencia artificial
+        </h1>
+        <p class="hero-sub reveal">
+          Te ayudamos a responder más rápido, organizar tus clientes y no
+          olvidarte de ningún turno. Vos atendés tu negocio, la tecnología se
+          encarga del resto.
+        </p>
+        <div class="hero-actions reveal">
+          <a
+            class="btn btn-primary btn-large"
+            href="https://wa.me/5492945505409?text=Hola%20Leonel!%20Quiero%20saber%20c%C3%B3mo%20puedo%20automatizar%20mi%20negocio"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg class="icon-wsp" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M17.6 6.3A7.9 7.9 0 0 0 12.04 4 7.94 7.94 0 0 0 4.1 12a7.9 7.9 0 0 0 1.06 3.97L4 20l4.14-1.09A7.93 7.93 0 0 0 12.04 20 7.94 7.94 0 0 0 20 12a7.9 7.9 0 0 0-2.4-5.7ZM12.04 18.5a6.4 6.4 0 0 1-3.28-.9l-.24-.14-2.46.64.66-2.4-.15-.25a6.44 6.44 0 0 1-1-3.45 6.5 6.5 0 1 1 6.47 6.5Zm3.56-4.87c-.2-.1-1.15-.57-1.33-.63-.18-.07-.3-.1-.44.1-.13.19-.5.63-.62.76-.11.13-.23.14-.42.05-.2-.1-.83-.31-1.58-.98a5.9 5.9 0 0 1-1.1-1.36c-.11-.2 0-.3.09-.4.09-.1.2-.24.3-.36.1-.12.13-.2.2-.34.06-.13.03-.25-.02-.35-.05-.1-.44-1.06-.6-1.45-.16-.38-.32-.33-.44-.33h-.38c-.13 0-.34.05-.52.24-.18.19-.68.66-.68 1.61 0 .95.7 1.87.8 2 .1.13 1.36 2.09 3.31 2.92.46.2.82.32 1.1.4.46.15.88.13 1.21.08.37-.06 1.15-.47 1.31-.92.16-.46.16-.85.11-.93-.05-.09-.18-.14-.38-.24Z"
+              />
+            </svg>
+            Hablar por WhatsApp
+          </a>
+          <a class="btn btn-ghost" href="#como-funciona">Ver cómo funciona ↓</a>
+        </div>
+      </div>
+
+      <!-- Divisor con forma de montaña, tomado directamente de la identidad de marca -->
+      <svg
+        class="mountain-divider"
+        viewBox="0 0 1200 120"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+      >
+        <path
+          d="M0,120 L0,70 L180,15 L340,70 L520,0 L720,70 L900,25 L1060,70 L1200,40 L1200,120 Z"
+          fill="var(--bg-light)"
+        />
+      </svg>
+    </section>
+
+    <!-- QUÉ HACEMOS -->
+    <section class="section section-light" id="que-hacemos">
+      <div class="wrap">
+        <p class="eyebrow eyebrow-dark">Qué hacemos</p>
+        <h2>Todo lo que tu negocio hace a mano, lo hacemos automático</h2>
+        <p class="section-sub">
+          No hace falta que entiendas de tecnología. Vos nos contás cómo
+          trabajás hoy y nosotros armamos la solución.
+        </p>
+
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <span class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M17.6 6.3A7.9 7.9 0 0 0 12.04 4 7.94 7.94 0 0 0 4.1 12a7.9 7.9 0 0 0 1.06 3.97L4 20l4.14-1.09A7.93 7.93 0 0 0 12.04 20 7.94 7.94 0 0 0 20 12a7.9 7.9 0 0 0-2.4-5.7Z"
+                />
+              </svg>
+            </span>
+            <h3>Respuestas automáticas de WhatsApp</h3>
+            <p>
+              Tu negocio responde solo, las 24 horas, sin que nadie tenga que
+              estar pendiente del celular.
+            </p>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <circle cx="9" cy="8" r="3" />
+                <circle cx="17" cy="9" r="2.3" />
+                <path d="M4 19c0-3 2.5-5 5-5s5 2 5 5" />
+                <path d="M14.5 14.2c2 .2 3.5 1.9 3.5 4" />
+              </svg>
+            </span>
+            <h3>Organización de clientes</h3>
+            <p>
+              Toda la información de tus clientes ordenada y a mano, sin
+              planillas ni papeles sueltos.
+            </p>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <rect x="4" y="5" width="16" height="15" rx="2" />
+                <path d="M4 10h16" />
+                <path d="M8 3v4M16 3v4" />
+                <circle cx="15.5" cy="15.5" r="2.3" />
+                <path d="M15.5 14.3v1.2l.8.6" />
+              </svg>
+            </span>
+            <h3>Recordatorios automáticos</h3>
+            <p>
+              Les avisamos a tus clientes antes de su turno para que no se
+              olviden ni falten.
+            </p>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <rect x="4" y="5" width="16" height="15" rx="2" />
+                <path d="M4 10h16" />
+                <path d="M8 3v4M16 3v4" />
+                <path d="M8 14h3M8 17h5" />
+              </svg>
+            </span>
+            <h3>Gestión de turnos</h3>
+            <p>
+              Reservas y agenda organizadas automáticamente, sin llamados ni
+              mensajes cruzados.
+            </p>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M4 12a8 8 0 0 1 13.6-5.7M20 12a8 8 0 0 1-13.6 5.7" />
+                <path d="M17.6 3v3.6H14M6.4 21v-3.6H10" />
+              </svg>
+            </span>
+            <h3>Tareas repetitivas</h3>
+            <p>
+              Lo que hacés todos los días a mano, lo hacemos automático para
+              vos.
+            </p>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <rect x="3" y="4" width="18" height="13" rx="2" />
+                <path d="M8 21h8M12 17v4" />
+                <path d="M8 12l2.5-2.5L13 12l3-3" />
+              </svg>
+            </span>
+            <h3>Automatización de redes sociales</h3>
+            <p>
+              Publicaciones y respuestas automáticas para que tus redes trabajen
+              solas.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFICIOS -->
+    <section class="section section-dark benefits">
+      <div class="benefits-bg-pattern" aria-hidden="true"></div>
+      <div class="wrap">
+        <p class="eyebrow">Beneficios</p>
+        <h2>¿Qué ganás automatizando tu negocio?</h2>
+
+        <div class="benefits-grid">
+          <div class="benefit reveal">
+            <span class="benefit-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 7v5l3.5 2" />
+              </svg>
+            </span>
+            <h3>Ahorrás tiempo</h3>
+            <p>
+              Menos tareas manuales, más tiempo para vos y para hacer crecer tu
+              negocio.
+            </p>
+          </div>
+          <div class="benefit reveal">
+            <span class="benefit-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <circle cx="9" cy="8" r="3" />
+                <circle cx="17" cy="8" r="2.6" />
+                <path d="M3 19c0-3 2.7-5.2 6-5.2s6 2.2 6 5.2" />
+                <path d="M14.5 14c2.2.3 4 2.2 4 5" />
+              </svg>
+            </span>
+            <h3>Atendés más clientes</h3>
+            <p>Sin perder calidad ni volverte loco organizando todo a mano.</p>
+          </div>
+          <div class="benefit reveal">
+            <span class="benefit-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 3l8 4v5c0 5-3.4 8.4-8 9-4.6-.6-8-4-8-9V7Z" />
+                <path d="M9 12l2 2 4-4.2" />
+              </svg>
+            </span>
+            <h3>Reducís errores</h3>
+            <p>
+              Menos olvidos, menos turnos perdidos, menos plata que se te
+              escapa.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CÓMO FUNCIONA -->
+    <section class="section section-light" id="como-funciona">
+      <div class="wrap">
+        <p class="eyebrow eyebrow-dark">Cómo funciona</p>
+        <h2>Empezar es más simple de lo que pensás</h2>
+        <p class="section-sub">
+          Así trabajamos, paso a paso, de principio a fin.
+        </p>
+
+        <div class="steps">
+          <div class="step reveal">
+            <span class="step-num">01</span>
+            <h3>Charlamos</h3>
+            <p>
+              Nos contás cómo funciona tu negocio hoy y qué te gustaría mejorar.
+            </p>
+          </div>
+          <div class="step reveal">
+            <span class="step-num">02</span>
+            <h3>Armamos el plan</h3>
+            <p>
+              Diseñamos la automatización que mejor se adapta a vos, sin
+              complicaciones.
+            </p>
+          </div>
+          <div class="step reveal">
+            <span class="step-num">03</span>
+            <h3>Lo ponemos en marcha</h3>
+            <p>Configuramos todo y lo probamos juntos antes de lanzarlo.</p>
+          </div>
+          <div class="step reveal">
+            <span class="step-num">04</span>
+            <h3>Te acompañamos</h3>
+            <p>
+              Hacemos seguimiento y ajustes para que todo siga funcionando bien.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INVERSIÓN / PLANES -->
+    <section class="section section-tint" id="inversion">
+      <div class="wrap">
+        <p class="eyebrow eyebrow-dark">Inversión</p>
+        <h2>¿Cuánto cuesta automatizar tu negocio?</h2>
+        <p class="section-sub">
+          Cada negocio es distinto, así que el valor final depende de lo que
+          necesites. Estos son los valores de referencia:
+        </p>
+
+        <div class="pricing-grid">
+          <div class="price-card reveal">
+            <h3>Diagnóstico</h3>
+            <p class="price">Gratis</p>
+            <p class="price-desc">
+              Charlamos sin compromiso y vemos juntos qué podés automatizar.
+            </p>
+          </div>
+
+          <div class="price-card price-card-featured reveal">
+            <span class="price-tag">Lo más elegido</span>
+            <h3>Sistema a medida</h3>
+            <p class="price">$200.000 – $400.000</p>
+            <p class="price-desc">
+              Pago único. El valor final depende de la cantidad de tareas a
+              automatizar y la complejidad de tu negocio.
+            </p>
+          </div>
+
+          <div class="price-card reveal">
+            <h3>Mantenimiento mensual</h3>
+            <p class="price">
+              $50.000 – $90.000<span class="price-period">/mes</span>
+            </p>
+            <p class="price-desc">
+              Incluye hosting, mantenimiento y soporte para que todo siga
+              funcionando sin que te tengas que ocupar de nada.
+            </p>
+          </div>
+        </div>
+
+        <p class="price-note">
+          Los valores son orientativos. Te paso el presupuesto exacto después de
+          charlar sobre tu negocio, sin compromiso.
+        </p>
+        <div class="center-cta">
+          <a
+            class="btn btn-primary btn-large"
+            href="https://wa.me/5492945505409?text=Hola%20Leonel!%20Quiero%20mi%20cotizaci%C3%B3n%20para%20automatizar%20mi%20negocio"
+            target="_blank"
+            rel="noopener"
+          >
+            Quiero mi cotización
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE MÍ -->
+    <section class="section section-light about">
+      <div class="wrap about-inner">
+        <div class="about-photo reveal">
+          <img
+            src="assets/leonel-2.png"
+            alt="Foto de Leonel Gonzalez, fundador de Andino Flow, trabajando en su escritorio con notebook, con paisaje de montañas de Esquel, Chubut, de fondo"
+            onerror="
+              this.closest('.about-photo').classList.add('photo-missing')
+            "
+          />
+          <div class="photo-fallback" aria-hidden="true">
+            <span class="brand-mark brand-mark-dark"></span>
+          </div>
+        </div>
+        <div class="about-text reveal">
+          <p class="eyebrow eyebrow-dark">Quién está del otro lado</p>
+          <h2>Soy Leonel, de Esquel</h2>
+          <p>
+            Trabajo con dueños de negocios como el tuyo para que la tecnología
+            deje de ser un dolor de cabeza y empiece a ahorrarte tiempo de
+            verdad. Nada de términos raros: te explico todo en criollo y te
+            acompaño en cada paso.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="section section-dark final-cta">
+      <div class="hero-bg-pattern" aria-hidden="true"></div>
+      <div class="wrap">
+        <span class="brand-mark brand-mark-lg" aria-hidden="true"></span>
+        <h2>Hablemos y automatizá tu negocio</h2>
+        <p class="section-sub section-sub-light">
+          Contame cómo trabajás hoy y te muestro cómo podés empezar a ahorrar
+          tiempo desde la primera semana.
+        </p>
+        <a
+          class="btn btn-primary btn-large"
+          href="https://wa.me/5492945505409?text=Hola%20Leonel!%20Quiero%20automatizar%20mi%20negocio"
+          target="_blank"
+          rel="noopener"
+        >
+          <svg class="icon-wsp" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M17.6 6.3A7.9 7.9 0 0 0 12.04 4 7.94 7.94 0 0 0 4.1 12a7.9 7.9 0 0 0 1.06 3.97L4 20l4.14-1.09A7.93 7.93 0 0 0 12.04 20 7.94 7.94 0 0 0 20 12a7.9 7.9 0 0 0-2.4-5.7ZM12.04 18.5a6.4 6.4 0 0 1-3.28-.9l-.24-.14-2.46.64.66-2.4-.15-.25a6.44 6.44 0 0 1-1-3.45 6.5 6.5 0 1 1 6.47 6.5Zm3.56-4.87c-.2-.1-1.15-.57-1.33-.63-.18-.07-.3-.1-.44.1-.13.19-.5.63-.62.76-.11.13-.23.14-.42.05-.2-.1-.83-.31-1.58-.98a5.9 5.9 0 0 1-1.1-1.36c-.11-.2 0-.3.09-.4.09-.1.2-.24.3-.36.1-.12.13-.2.2-.34.06-.13.03-.25-.02-.35-.05-.1-.44-1.06-.6-1.45-.16-.38-.32-.33-.44-.33h-.38c-.13 0-.34.05-.52.24-.18.19-.68.66-.68 1.61 0 .95.7 1.87.8 2 .1.13 1.36 2.09 3.31 2.92.46.2.82.32 1.1.4.46.15.88.13 1.21.08.37-.06 1.15-.47 1.31-.92.16-.46.16-.85.11-.93-.05-.09-.18-.14-.38-.24Z"
+            />
+          </svg>
+          Hablar por WhatsApp
+        </a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <div class="footer-brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <div>
+            <p class="footer-name">ANDINO FLOW</p>
+            <p class="footer-tag">Automatización con Inteligencia Artificial</p>
+          </div>
+        </div>
+
+        <div class="footer-contact">
+          <a href="https://wa.me/5492945505409" target="_blank" rel="noopener">
+            <svg class="icon-wsp" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M17.6 6.3A7.9 7.9 0 0 0 12.04 4 7.94 7.94 0 0 0 4.1 12a7.9 7.9 0 0 0 1.06 3.97L4 20l4.14-1.09A7.93 7.93 0 0 0 12.04 20 7.94 7.94 0 0 0 20 12a7.9 7.9 0 0 0-2.4-5.7ZM12.04 18.5a6.4 6.4 0 0 1-3.28-.9l-.24-.14-2.46.64.66-2.4-.15-.25a6.44 6.44 0 0 1-1-3.45 6.5 6.5 0 1 1 6.47 6.5Zm3.56-4.87c-.2-.1-1.15-.57-1.33-.63-.18-.07-.3-.1-.44.1-.13.19-.5.63-.62.76-.11.13-.23.14-.42.05-.2-.1-.83-.31-1.58-.98a5.9 5.9 0 0 1-1.1-1.36c-.11-.2 0-.3.09-.4.09-.1.2-.24.3-.36.1-.12.13-.2.2-.34.06-.13.03-.25-.02-.35-.05-.1-.44-1.06-.6-1.45-.16-.38-.32-.33-.44-.33h-.38c-.13 0-.34.05-.52.24-.18.19-.68.66-.68 1.61 0 .95.7 1.87.8 2 .1.13 1.36 2.09 3.31 2.92.46.2.82.32 1.1.4.46.15.88.13 1.21.08.37-.06 1.15-.47 1.31-.92.16-.46.16-.85.11-.93-.05-.09-.18-.14-.38-.24Z"
+              />
+            </svg>
+            +54 9 2945 50-5409
+          </a>
+          <a href="mailto:leonelpala234@gmail.com">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="5" width="18" height="14" rx="2" />
+              <path d="M4 7l8 6 8-6" />
+            </svg>
+            leonelpala234@gmail.com
+          </a>
+          <span class="footer-location">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12Z" />
+              <circle cx="12" cy="9" r="2.5" />
+            </svg>
+            Esquel, Chubut, Argentina
+          </span>
+        </div>
+      </div>
+      <div class="wrap footer-bottom">
+        <p>© 2026 Andino Flow · andinoflow.lat</p>
+      </div>
+    </footer>
+
+    <!-- Botón flotante de WhatsApp (mobile-friendly) -->
+    <a
+      href="https://wa.me/5492945505409?text=Hola%20Leonel!%20Quiero%20saber%20c%C3%B3mo%20puedo%20automatizar%20mi%20negocio"
+      class="float-wsp"
+      id="floatWsp"
+      target="_blank"
+      rel="noopener"
+      aria-label="Escribir por WhatsApp"
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path
+          d="M17.6 6.3A7.9 7.9 0 0 0 12.04 4 7.94 7.94 0 0 0 4.1 12a7.9 7.9 0 0 0 1.06 3.97L4 20l4.14-1.09A7.93 7.93 0 0 0 12.04 20 7.94 7.94 0 0 0 20 12a7.9 7.9 0 0 0-2.4-5.7ZM12.04 18.5a6.4 6.4 0 0 1-3.28-.9l-.24-.14-2.46.64.66-2.4-.15-.25a6.44 6.44 0 0 1-1-3.45 6.5 6.5 0 1 1 6.47 6.5Zm3.56-4.87c-.2-.1-1.15-.57-1.33-.63-.18-.07-.3-.1-.44.1-.13.19-.5.63-.62.76-.11.13-.23.14-.42.05-.2-.1-.83-.31-1.58-.98a5.9 5.9 0 0 1-1.1-1.36c-.11-.2 0-.3.09-.4.09-.1.2-.24.3-.36.1-.12.13-.2.2-.34.06-.13.03-.25-.02-.35-.05-.1-.44-1.06-.6-1.45-.16-.38-.32-.33-.44-.33h-.38c-.13 0-.34.05-.52.24-.18.19-.68.66-.68 1.61 0 .95.7 1.87.8 2 .1.13 1.36 2.09 3.31 2.92.46.2.82.32 1.1.4.46.15.88.13 1.21.08.37-.06 1.15-.47 1.31-.92.16-.46.16-.85.11-.93-.05-.09-.18-.14-.38-.24Z"
+        />
+      </svg>
     </a>
-    <nav class="main-nav" aria-label="Navegación principal">
-      <a href="#que-hacemos">Qué hacemos</a>
-      <a href="#como-funciona">Cómo funciona</a>
-      <a href="#inversion">Planes</a>
-    </nav>
-    <a class="btn btn-primary btn-small" id="navCta"
-       href="https://wa.me/5492945505409?text=Hola%20Leonel!%20Quiero%20saber%20c%C3%B3mo%20puedo%20automatizar%20mi%20negocio"
-       target="_blank" rel="noopener">
-      <svg class="icon-wsp" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.6 6.3A7.9 7.9 0 0 0 12.04 4 7.94 7.94 0 0 0 4.1 12a7.9 7.9 0 0 0 1.06 3.97L4 20l4.14-1.09A7.93 7.93 0 0 0 12.04 20 7.94 7.94 0 0 0 20 12a7.9 7.9 0 0 0-2.4-5.7ZM12.04 18.5a6.4 6.4 0 0 1-3.28-.9l-.24-.14-2.46.64.66-2.4-.15-.25a6.44 6.44 0 0 1-1-3.45 6.5 6.5 0 1 1 6.47 6.5Zm3.56-4.87c-.2-.1-1.15-.57-1.33-.63-.18-.07-.3-.1-.44.1-.13.19-.5.63-.62.76-.11.13-.23.14-.42.05-.2-.1-.83-.31-1.58-.98a5.9 5.9 0 0 1-1.1-1.36c-.11-.2 0-.3.09-.4.09-.1.2-.24.3-.36.1-.12.13-.2.2-.34.06-.13.03-.25-.02-.35-.05-.1-.44-1.06-.6-1.45-.16-.38-.32-.33-.44-.33h-.38c-.13 0-.34.05-.52.24-.18.19-.68.66-.68 1.61 0 .95.7 1.87.8 2 .1.13 1.36 2.09 3.31 2.92.46.2.82.32 1.1.4.46.15.88.13 1.21.08.37-.06 1.15-.47 1.31-.92.16-.46.16-.85.11-.93-.05-.09-.18-.14-.38-.24Z"/></svg>
-      Escribinos
-    </a>
-    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-bg-pattern" aria-hidden="true"></div>
-  <div class="wrap hero-inner">
-    <p class="eyebrow">Automatización + Inteligencia Artificial</p>
-    <h1 class="reveal">Automatizamos tu negocio<br>con inteligencia artificial</h1>
-    <p class="hero-sub reveal">
-      Te ayudamos a responder más rápido, organizar tus clientes y no olvidarte
-      de ningún turno. Vos atendés tu negocio, la tecnología se encarga del resto.
-    </p>
-    <div class="hero-actions reveal">
-      <a class="btn btn-primary btn-large"
-         href="https://wa.me/5492945505409?text=Hola%20Leonel!%20Quiero%20saber%20c%C3%B3mo%20puedo%20automatizar%20mi%20negocio"
-         target="_blank" rel="noopener">
-        <svg class="icon-wsp" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.6 6.3A7.9 7.9 0 0 0 12.04 4 7.94 7.94 0 0 0 4.1 12a7.9 7.9 0 0 0 1.06 3.97L4 20l4.14-1.09A7.93 7.93 0 0 0 12.04 20 7.94 7.94 0 0 0 20 12a7.9 7.9 0 0 0-2.4-5.7ZM12.04 18.5a6.4 6.4 0 0 1-3.28-.9l-.24-.14-2.46.64.66-2.4-.15-.25a6.44 6.44 0 0 1-1-3.45 6.5 6.5 0 1 1 6.47 6.5Zm3.56-4.87c-.2-.1-1.15-.57-1.33-.63-.18-.07-.3-.1-.44.1-.13.19-.5.63-.62.76-.11.13-.23.14-.42.05-.2-.1-.83-.31-1.58-.98a5.9 5.9 0 0 1-1.1-1.36c-.11-.2 0-.3.09-.4.09-.1.2-.24.3-.36.1-.12.13-.2.2-.34.06-.13.03-.25-.02-.35-.05-.1-.44-1.06-.6-1.45-.16-.38-.32-.33-.44-.33h-.38c-.13 0-.34.05-.52.24-.18.19-.68.66-.68 1.61 0 .95.7 1.87.8 2 .1.13 1.36 2.09 3.31 2.92.46.2.82.32 1.1.4.46.15.88.13 1.21.08.37-.06 1.15-.47 1.31-.92.16-.46.16-.85.11-.93-.05-.09-.18-.14-.38-.24Z"/></svg>
-        Hablar por WhatsApp
-      </a>
-      <a class="btn btn-ghost" href="#como-funciona">Ver cómo funciona ↓</a>
-    </div>
-  </div>
-
-  <!-- Divisor con forma de montaña, tomado directamente de la identidad de marca -->
-  <svg class="mountain-divider" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M0,120 L0,70 L180,15 L340,70 L520,0 L720,70 L900,25 L1060,70 L1200,40 L1200,120 Z" fill="var(--bg-light)"/>
-  </svg>
-</section>
-
-<!-- QUÉ HACEMOS -->
-<section class="section section-light" id="que-hacemos">
-  <div class="wrap">
-    <p class="eyebrow eyebrow-dark">Qué hacemos</p>
-    <h2>Todo lo que tu negocio hace a mano, lo hacemos automático</h2>
-    <p class="section-sub">
-      No hace falta que entiendas de tecnología. Vos nos contás cómo trabajás
-      hoy y nosotros armamos la solución.
-    </p>
-
-    <div class="services-grid">
-      <article class="service-card reveal">
-        <span class="service-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M17.6 6.3A7.9 7.9 0 0 0 12.04 4 7.94 7.94 0 0 0 4.1 12a7.9 7.9 0 0 0 1.06 3.97L4 20l4.14-1.09A7.93 7.93 0 0 0 12.04 20 7.94 7.94 0 0 0 20 12a7.9 7.9 0 0 0-2.4-5.7Z"/></svg>
-        </span>
-        <h3>Respuestas automáticas de WhatsApp</h3>
-        <p>Tu negocio responde solo, las 24 horas, sin que nadie tenga que estar pendiente del celular.</p>
-      </article>
-
-      <article class="service-card reveal">
-        <span class="service-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.3"/><path d="M4 19c0-3 2.5-5 5-5s5 2 5 5"/><path d="M14.5 14.2c2 .2 3.5 1.9 3.5 4"/></svg>
-        </span>
-        <h3>Organización de clientes</h3>
-        <p>Toda la información de tus clientes ordenada y a mano, sin planillas ni papeles sueltos.</p>
-      </article>
-
-      <article class="service-card reveal">
-        <span class="service-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16"/><path d="M8 3v4M16 3v4"/><circle cx="15.5" cy="15.5" r="2.3"/><path d="M15.5 14.3v1.2l.8.6"/></svg>
-        </span>
-        <h3>Recordatorios automáticos</h3>
-        <p>Les avisamos a tus clientes antes de su turno para que no se olviden ni falten.</p>
-      </article>
-
-      <article class="service-card reveal">
-        <span class="service-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16"/><path d="M8 3v4M16 3v4"/><path d="M8 14h3M8 17h5"/></svg>
-        </span>
-        <h3>Gestión de turnos</h3>
-        <p>Reservas y agenda organizadas automáticamente, sin llamados ni mensajes cruzados.</p>
-      </article>
-
-      <article class="service-card reveal">
-        <span class="service-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 13.6-5.7M20 12a8 8 0 0 1-13.6 5.7"/><path d="M17.6 3v3.6H14M6.4 21v-3.6H10"/></svg>
-        </span>
-        <h3>Tareas repetitivas</h3>
-        <p>Lo que hacés todos los días a mano, lo hacemos automático para vos.</p>
-      </article>
-
-      <article class="service-card reveal">
-        <span class="service-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M8 12l2.5-2.5L13 12l3-3"/></svg>
-        </span>
-        <h3>Automatización de redes sociales</h3>
-        <p>Publicaciones y respuestas automáticas para que tus redes trabajen solas.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- BENEFICIOS -->
-<section class="section section-dark benefits">
-  <div class="benefits-bg-pattern" aria-hidden="true"></div>
-  <div class="wrap">
-    <p class="eyebrow">Beneficios</p>
-    <h2>¿Qué ganás automatizando tu negocio?</h2>
-
-    <div class="benefits-grid">
-      <div class="benefit reveal">
-        <span class="benefit-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
-        </span>
-        <h3>Ahorrás tiempo</h3>
-        <p>Menos tareas manuales, más tiempo para vos y para hacer crecer tu negocio.</p>
-      </div>
-      <div class="benefit reveal">
-        <span class="benefit-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="8" r="2.6"/><path d="M3 19c0-3 2.7-5.2 6-5.2s6 2.2 6 5.2"/><path d="M14.5 14c2.2.3 4 2.2 4 5"/></svg>
-        </span>
-        <h3>Atendés más clientes</h3>
-        <p>Sin perder calidad ni volverte loco organizando todo a mano.</p>
-      </div>
-      <div class="benefit reveal">
-        <span class="benefit-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.4 8.4-8 9-4.6-.6-8-4-8-9V7Z"/><path d="M9 12l2 2 4-4.2"/></svg>
-        </span>
-        <h3>Reducís errores</h3>
-        <p>Menos olvidos, menos turnos perdidos, menos plata que se te escapa.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CÓMO FUNCIONA -->
-<section class="section section-light" id="como-funciona">
-  <div class="wrap">
-    <p class="eyebrow eyebrow-dark">Cómo funciona</p>
-    <h2>Empezar es más simple de lo que pensás</h2>
-    <p class="section-sub">Así trabajamos, paso a paso, de principio a fin.</p>
-
-    <div class="steps">
-      <div class="step reveal">
-        <span class="step-num">01</span>
-        <h3>Charlamos</h3>
-        <p>Nos contás cómo funciona tu negocio hoy y qué te gustaría mejorar.</p>
-      </div>
-      <div class="step reveal">
-        <span class="step-num">02</span>
-        <h3>Armamos el plan</h3>
-        <p>Diseñamos la automatización que mejor se adapta a vos, sin complicaciones.</p>
-      </div>
-      <div class="step reveal">
-        <span class="step-num">03</span>
-        <h3>Lo ponemos en marcha</h3>
-        <p>Configuramos todo y lo probamos juntos antes de lanzarlo.</p>
-      </div>
-      <div class="step reveal">
-        <span class="step-num">04</span>
-        <h3>Te acompañamos</h3>
-        <p>Hacemos seguimiento y ajustes para que todo siga funcionando bien.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- INVERSIÓN / PLANES -->
-<section class="section section-tint" id="inversion">
-  <div class="wrap">
-    <p class="eyebrow eyebrow-dark">Inversión</p>
-    <h2>¿Cuánto cuesta automatizar tu negocio?</h2>
-    <p class="section-sub">
-      Cada negocio es distinto, así que el valor final depende de lo que necesites.
-      Estos son los valores de referencia:
-    </p>
-
-    <div class="pricing-grid">
-      <div class="price-card reveal">
-        <h3>Diagnóstico</h3>
-        <p class="price">Gratis</p>
-        <p class="price-desc">Charlamos sin compromiso y vemos juntos qué podés automatizar.</p>
-      </div>
-
-      <div class="price-card price-card-featured reveal">
-        <span class="price-tag">Lo más elegido</span>
-        <h3>Sistema a medida</h3>
-        <p class="price">$200.000 – $400.000</p>
-        <p class="price-desc">Pago único. El valor final depende de la cantidad de tareas a automatizar y la complejidad de tu negocio.</p>
-      </div>
-
-      <div class="price-card reveal">
-        <h3>Mantenimiento mensual</h3>
-        <p class="price">$50.000 – $90.000<span class="price-period">/mes</span></p>
-        <p class="price-desc">Incluye hosting, mantenimiento y soporte para que todo siga funcionando sin que te tengas que ocupar de nada.</p>
-      </div>
-    </div>
-
-    <p class="price-note">
-      Los valores son orientativos. Te paso el presupuesto exacto después de charlar sobre tu negocio, sin compromiso.
-    </p>
-    <div class="center-cta">
-      <a class="btn btn-primary btn-large"
-         href="https://wa.me/5492945505409?text=Hola%20Leonel!%20Quiero%20mi%20cotizaci%C3%B3n%20para%20automatizar%20mi%20negocio"
-         target="_blank" rel="noopener">
-        Quiero mi cotización
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- SOBRE MÍ -->
-<section class="section section-light about">
-  <div class="wrap about-inner">
-    <div class="about-photo reveal">
-      <img src="assets/leonel.jpg"
-           alt="Foto de Leonel Gonzalez, fundador de Andino Flow, trabajando en su escritorio con notebook, con paisaje de montañas de Esquel, Chubut, de fondo"
-           onerror="this.closest('.about-photo').classList.add('photo-missing')">
-      <div class="photo-fallback" aria-hidden="true">
-        <span class="brand-mark brand-mark-dark"></span>
-      </div>
-    </div>
-    <div class="about-text reveal">
-      <p class="eyebrow eyebrow-dark">Quién está del otro lado</p>
-      <h2>Soy Leonel, de Esquel</h2>
-      <p>
-        Trabajo con dueños de negocios como el tuyo para que la tecnología deje
-        de ser un dolor de cabeza y empiece a ahorrarte tiempo de verdad. Nada
-        de términos raros: te explico todo en criollo y te acompaño en cada paso.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- CTA FINAL -->
-<section class="section section-dark final-cta">
-  <div class="hero-bg-pattern" aria-hidden="true"></div>
-  <div class="wrap">
-    <span class="brand-mark brand-mark-lg" aria-hidden="true"></span>
-    <h2>Hablemos y automatizá tu negocio</h2>
-    <p class="section-sub section-sub-light">
-      Contame cómo trabajás hoy y te muestro cómo podés empezar a ahorrar tiempo
-      desde la primera semana.
-    </p>
-    <a class="btn btn-primary btn-large"
-       href="https://wa.me/5492945505409?text=Hola%20Leonel!%20Quiero%20automatizar%20mi%20negocio"
-       target="_blank" rel="noopener">
-      <svg class="icon-wsp" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.6 6.3A7.9 7.9 0 0 0 12.04 4 7.94 7.94 0 0 0 4.1 12a7.9 7.9 0 0 0 1.06 3.97L4 20l4.14-1.09A7.93 7.93 0 0 0 12.04 20 7.94 7.94 0 0 0 20 12a7.9 7.9 0 0 0-2.4-5.7ZM12.04 18.5a6.4 6.4 0 0 1-3.28-.9l-.24-.14-2.46.64.66-2.4-.15-.25a6.44 6.44 0 0 1-1-3.45 6.5 6.5 0 1 1 6.47 6.5Zm3.56-4.87c-.2-.1-1.15-.57-1.33-.63-.18-.07-.3-.1-.44.1-.13.19-.5.63-.62.76-.11.13-.23.14-.42.05-.2-.1-.83-.31-1.58-.98a5.9 5.9 0 0 1-1.1-1.36c-.11-.2 0-.3.09-.4.09-.1.2-.24.3-.36.1-.12.13-.2.2-.34.06-.13.03-.25-.02-.35-.05-.1-.44-1.06-.6-1.45-.16-.38-.32-.33-.44-.33h-.38c-.13 0-.34.05-.52.24-.18.19-.68.66-.68 1.61 0 .95.7 1.87.8 2 .1.13 1.36 2.09 3.31 2.92.46.2.82.32 1.1.4.46.15.88.13 1.21.08.37-.06 1.15-.47 1.31-.92.16-.46.16-.85.11-.93-.05-.09-.18-.14-.38-.24Z"/></svg>
-      Hablar por WhatsApp
-    </a>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="site-footer">
-  <div class="wrap footer-inner">
-    <div class="footer-brand">
-      <span class="brand-mark" aria-hidden="true"></span>
-      <div>
-        <p class="footer-name">ANDINO FLOW</p>
-        <p class="footer-tag">Automatización con Inteligencia Artificial</p>
-      </div>
-    </div>
-
-    <div class="footer-contact">
-      <a href="https://wa.me/5492945505409" target="_blank" rel="noopener">
-        <svg class="icon-wsp" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.6 6.3A7.9 7.9 0 0 0 12.04 4 7.94 7.94 0 0 0 4.1 12a7.9 7.9 0 0 0 1.06 3.97L4 20l4.14-1.09A7.93 7.93 0 0 0 12.04 20 7.94 7.94 0 0 0 20 12a7.9 7.9 0 0 0-2.4-5.7ZM12.04 18.5a6.4 6.4 0 0 1-3.28-.9l-.24-.14-2.46.64.66-2.4-.15-.25a6.44 6.44 0 0 1-1-3.45 6.5 6.5 0 1 1 6.47 6.5Zm3.56-4.87c-.2-.1-1.15-.57-1.33-.63-.18-.07-.3-.1-.44.1-.13.19-.5.63-.62.76-.11.13-.23.14-.42.05-.2-.1-.83-.31-1.58-.98a5.9 5.9 0 0 1-1.1-1.36c-.11-.2 0-.3.09-.4.09-.1.2-.24.3-.36.1-.12.13-.2.2-.34.06-.13.03-.25-.02-.35-.05-.1-.44-1.06-.6-1.45-.16-.38-.32-.33-.44-.33h-.38c-.13 0-.34.05-.52.24-.18.19-.68.66-.68 1.61 0 .95.7 1.87.8 2 .1.13 1.36 2.09 3.31 2.92.46.2.82.32 1.1.4.46.15.88.13 1.21.08.37-.06 1.15-.47 1.31-.92.16-.46.16-.85.11-.93-.05-.09-.18-.14-.38-.24Z"/></svg>
-        +54 9 2945 50-5409
-      </a>
-      <a href="mailto:leonelpala234@gmail.com">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M4 7l8 6 8-6"/></svg>
-        leonelpala234@gmail.com
-      </a>
-      <span class="footer-location">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg>
-        Esquel, Chubut, Argentina
-      </span>
-    </div>
-  </div>
-  <div class="wrap footer-bottom">
-    <p>© 2026 Andino Flow · andinoflow.lat</p>
-  </div>
-</footer>
-
-<!-- Botón flotante de WhatsApp (mobile-friendly) -->
-<a href="https://wa.me/5492945505409?text=Hola%20Leonel!%20Quiero%20saber%20c%C3%B3mo%20puedo%20automatizar%20mi%20negocio"
-   class="float-wsp" id="floatWsp" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
-  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.6 6.3A7.9 7.9 0 0 0 12.04 4 7.94 7.94 0 0 0 4.1 12a7.9 7.9 0 0 0 1.06 3.97L4 20l4.14-1.09A7.93 7.93 0 0 0 12.04 20 7.94 7.94 0 0 0 20 12a7.9 7.9 0 0 0-2.4-5.7ZM12.04 18.5a6.4 6.4 0 0 1-3.28-.9l-.24-.14-2.46.64.66-2.4-.15-.25a6.44 6.44 0 0 1-1-3.45 6.5 6.5 0 1 1 6.47 6.5Zm3.56-4.87c-.2-.1-1.15-.57-1.33-.63-.18-.07-.3-.1-.44.1-.13.19-.5.63-.62.76-.11.13-.23.14-.42.05-.2-.1-.83-.31-1.58-.98a5.9 5.9 0 0 1-1.1-1.36c-.11-.2 0-.3.09-.4.09-.1.2-.24.3-.36.1-.12.13-.2.2-.34.06-.13.03-.25-.02-.35-.05-.1-.44-1.06-.6-1.45-.16-.38-.32-.33-.44-.33h-.38c-.13 0-.34.05-.52.24-.18.19-.68.66-.68 1.61 0 .95.7 1.87.8 2 .1.13 1.36 2.09 3.31 2.92.46.2.82.32 1.1.4.46.15.88.13 1.21.08.37-.06 1.15-.47 1.31-.92.16-.46.16-.85.11-.93-.05-.09-.18-.14-.38-.24Z"/></svg>
-</a>
-
-<script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
