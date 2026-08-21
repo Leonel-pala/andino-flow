@@ -58,4 +58,43 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
 
+  /* ---------- Countdown promo (hasta 6 de noviembre) ---------- */
+  const promoCountdown = document.getElementById('promoCountdown');
+  const promoEnd = new Date('2026-11-06T23:59:59-03:00');
+
+  function pluralize(value, singular, plural) {
+    return value === 1 ? singular : plural;
+  }
+
+  function updatePromoCountdown() {
+    if (!promoCountdown) return;
+
+    const diff = promoEnd.getTime() - Date.now();
+
+    if (diff <= 0) {
+      promoCountdown.textContent = 'La promo finalizó el 6 de noviembre.';
+      return;
+    }
+
+    const totalMinutes = Math.floor(diff / 60000);
+    const months = Math.floor(totalMinutes / (60 * 24 * 30));
+    const days = Math.floor((totalMinutes % (60 * 24 * 7)) / (60));
+    const hours = Math.floor((totalMinutes % (60 * 24)) / 60);
+    const minutes = totalMinutes % 60;
+
+    const parts = [
+      `${months} ${pluralize(months, 'mes', 'meses')}`,
+      `${days} ${pluralize(days, 'día', 'días')}`,
+      `${hours} ${pluralize(hours, 'hora', 'horas')}`,
+      `${minutes} ${pluralize(minutes, 'minuto', 'minutos')}`,
+    ];
+
+    promoCountdown.textContent = `${parts.join(' : ')}`;
+  }
+
+  if (promoCountdown) {
+    updatePromoCountdown();
+    setInterval(updatePromoCountdown, 60000);
+  }
+
 });
