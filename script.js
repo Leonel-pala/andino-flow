@@ -4,7 +4,6 @@
 // =========================================================
 
 document.addEventListener('DOMContentLoaded', () => {
-
   /* ---------- Menú móvil ---------- */
   const header = document.querySelector('.site-header');
   const navToggle = document.getElementById('navToggle');
@@ -16,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Cierra el menú al elegir una opción
-    document.querySelectorAll('.main-nav a').forEach(link => {
+    document.querySelectorAll('.main-nav a').forEach((link) => {
       link.addEventListener('click', () => {
         header.classList.remove('nav-open');
         navToggle.setAttribute('aria-expanded', 'false');
@@ -28,19 +27,22 @@ document.addEventListener('DOMContentLoaded', () => {
   const revealEls = document.querySelectorAll('.reveal');
 
   if ('IntersectionObserver' in window && revealEls.length) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: '0px 0px -40px 0px' },
+    );
 
-    revealEls.forEach(el => observer.observe(el));
+    revealEls.forEach((el) => observer.observe(el));
   } else {
     // Fallback: si no hay soporte, mostrar todo directamente
-    revealEls.forEach(el => el.classList.add('in-view'));
+    revealEls.forEach((el) => el.classList.add('in-view'));
   }
 
   /* ---------- Botón flotante de WhatsApp ---------- */
@@ -49,13 +51,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (floatWsp && hero) {
     const heroHeight = hero.offsetHeight;
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > heroHeight * 0.6) {
-        floatWsp.classList.add('visible');
-      } else {
-        floatWsp.classList.remove('visible');
-      }
-    }, { passive: true });
+    window.addEventListener(
+      'scroll',
+      () => {
+        if (window.scrollY > heroHeight * 0.6) {
+          floatWsp.classList.add('visible');
+        } else {
+          floatWsp.classList.remove('visible');
+        }
+      },
+      { passive: true },
+    );
   }
 
   /* ---------- Countdown promo (hasta 6 de noviembre) ---------- */
@@ -77,24 +83,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const totalMinutes = Math.floor(diff / 60000);
-    const months = Math.floor(totalMinutes / (60 * 24 * 30));
-    const days = Math.floor((totalMinutes % (60 * 24 * 7)) / (60));
+
+    const days = Math.floor(totalMinutes / (60 * 24));
     const hours = Math.floor((totalMinutes % (60 * 24)) / 60);
     const minutes = totalMinutes % 60;
 
     const parts = [
-      `${months} ${pluralize(months, 'mes', 'meses')}`,
       `${days} ${pluralize(days, 'día', 'días')}`,
       `${hours} ${pluralize(hours, 'hora', 'horas')}`,
       `${minutes} ${pluralize(minutes, 'minuto', 'minutos')}`,
     ];
 
-    promoCountdown.textContent = `${parts.join(' : ')}`;
+    promoCountdown.textContent = `Quedan ${parts.join(' : ')}`;
   }
-
   if (promoCountdown) {
     updatePromoCountdown();
     setInterval(updatePromoCountdown, 60000);
   }
-
 });
